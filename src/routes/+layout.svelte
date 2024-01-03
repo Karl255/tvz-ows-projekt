@@ -1,5 +1,9 @@
+<script>
+	import "../app.scss";
+</script>
+
 <header>
-	<div class="container">
+	<div class="container header__content">
 		<span class="temp">LOGO</span>
 
 		<nav>
@@ -45,31 +49,29 @@
 	</div>
 </footer>
 
-<style>
+<style lang="scss">
 	:global(body) {
 		display: flex;
 		flex-direction: column;
 	}
 
 	:global(:root) {
-		--page-width: 50rem; /* TODO: fine tune */
+		--page-width: 50rem; // TODO: fine tune
 	}
 
 	main {
 		flex-grow: 1;
 	}
 
-	/* header */
-
 	header {
 		background-color: #eee;
 	}
 
-	header > * {
+	.header__content {
 		display: grid;
 		grid-template-columns: 4.5rem 1fr 4.5rem;
 		align-items: center;
-		gap: 2rem; /* TODO: reduce on smaller screens? */
+		gap: 2rem; // TODO: reduce on smaller screens?
 	}
 
 	header .icons {
@@ -77,14 +79,12 @@
 		flex-direction: row;
 		justify-content: end;
 		gap: 1.25rem;
-	}
 
-	header .icons a {
-		flex-basis: 1.25rem;
-		aspect-ratio: 1;
+		a {
+			flex-basis: 1.25rem;
+			aspect-ratio: 1;
+		}
 	}
-
-	/* footer */
 
 	footer {
 		background-color: #eee;
@@ -94,13 +94,15 @@
 		justify-content: space-between;
 	}
 
-	/* all */
-
 	.container {
 		width: 100%;
 		max-width: var(--page-width);
 		margin-inline: auto;
 		padding-inline: 1rem;
+
+		footer & {
+			max-width: 30rem; // TODO: var, fine tune
+		}
 	}
 
 	.nav-links {
@@ -112,15 +114,15 @@
 	a {
 		display: block;
 		color: inherit;
-		text-decoration: none; /* TODO: maybe remove? */
+		text-decoration: none; // TODO: maybe remove?
 	}
 
 	a.link {
 		padding: 1rem;
-	}
 
-	a.link:hover {
-		background-color: #ddd;
+		&:hover {
+			background-color: #ddd;
+		}
 	}
 
 	svg {
