@@ -17,7 +17,7 @@
 			</ul>
 		</nav>
 
-		<div class="icons">
+		<div class="header__icons">
 			<a href=".">
 				<!-- prettier-ignore -->
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -55,12 +55,39 @@
 		flex-direction: column;
 	}
 
-	:global(:root) {
-		--page-width: 50rem; // TODO: fine tune
-	}
-
 	main {
 		flex-grow: 1;
+		padding-block: 1rem;
+
+		display: grid;
+		align-content: start;
+		$_padding: 1rem;
+
+		// prettier-ignore
+		grid-template-columns:
+			minmax($_padding, 1fr)
+			[wide-start] minmax(0, 8rem)
+			[standard-start] calc($page-width - 2 * $_padding) [standard-end]
+			minmax(0, 8rem) [wide-end]
+			minmax($_padding, 1fr);
+
+		// TODO: mobile
+		/*
+		grid-template-columns:
+			$_padding
+			[wide-start] 0
+			[standard-start] minmax(0, calc($page-width - 2 * $_padding)) [standard-end]
+			0 [wide-end]
+			$_padding;
+		*/
+
+		> :global(*) {
+			grid-column: standard;
+		}
+
+		> :global(.content__wide) {
+			grid-column: wide;
+		}
 	}
 
 	header {
@@ -71,10 +98,10 @@
 		display: grid;
 		grid-template-columns: 4.5rem 1fr 4.5rem;
 		align-items: center;
-		gap: 2rem; // TODO: reduce on smaller screens?
+		gap: 2rem;
 	}
 
-	header .icons {
+	.header__icons {
 		display: flex;
 		flex-direction: row;
 		justify-content: end;
@@ -88,26 +115,22 @@
 
 	footer {
 		background-color: #eee;
-
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
 	}
 
 	.container {
 		width: 100%;
-		max-width: var(--page-width);
+		max-width: $page-width;
 		margin-inline: auto;
 		padding-inline: 1rem;
 
 		footer & {
-			max-width: 30rem; // TODO: var, fine tune
+			max-width: calc($page-width * 0.6); // TODO: var, fine tune
 		}
 	}
 
 	.nav-links {
 		display: flex;
-		flex-direction: row;
+		flex-flow: row wrap;
 		justify-content: space-between;
 	}
 

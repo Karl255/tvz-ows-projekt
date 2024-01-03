@@ -1,2 +1,6 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<p>CONTENT</p>
+
+<p class="content__wide">WIDE CONTENT</p>
+
+<style lang="scss">
+</style>
