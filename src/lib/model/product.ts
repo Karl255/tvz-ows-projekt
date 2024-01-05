@@ -1,21 +1,21 @@
 export enum ProductColor {
-	BLACK,
-	RED,
-	ORANGE,
-	YELLOW,
-	GREEN,
-	TURQUIOSE,
-	BLUE,
-	PURPLE,
-	PINK,
-	BLACK_WHITE_STRIPED,
-	OTHER,
+	BLACK = "BLACK",
+	RED = "RED",
+	ORANGE = "ORANGE",
+	YELLOW = "YELLOW",
+	GREEN = "GREEN",
+	TURQUOISE = "TURQUOISE",
+	BLUE = "BLUE",
+	PURPLE = "PURPLE",
+	PINK = "PINK",
+	BLACK_WHITE_STRIPED = "BLACK_WHITE_STRIPED",
+	OTHER = "OTHER",
 }
 
 export enum ProductType {
-	EARRINGS,
-	NECKLACE,
-	RING,
+	EARRINGS = "EARRINGS",
+	NECKLACE = "NECKLACE",
+	RING = "RING",
 }
 
 export interface Product {
