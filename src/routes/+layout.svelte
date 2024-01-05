@@ -10,9 +10,9 @@
 			<!-- prettier-ignore -->
 			<ul class="nav-links">
 				<li><a class="link" href=".">Naušnice</a></li>
-				<li><a class="link" href=".">Narukvice</a></li>
 				<li><a class="link" href=".">Prsteni</a></li>
 				<li><a class="link" href=".">Ogrlice</a></li>
+				<li><a class="link" href=".">Po boji</a></li>
 				<li><a class="link" href=".">Događaji</a></li>
 			</ul>
 		</nav>
