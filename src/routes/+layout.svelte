@@ -12,24 +12,24 @@
 		<nav>
 			<!-- prettier-ignore -->
 			<ul class="nav-links">
-				<li><a class="link" href=".">Naušnice</a></li>
-				<li><a class="link" href=".">Prsteni</a></li>
-				<li><a class="link" href=".">Ogrlice</a></li>
-				<li><a class="link" href=".">Po boji</a></li>
-				<li><a class="link" href=".">Događaji</a></li>
+				<li><a class="link" href="TODO">Naušnice</a></li>
+				<li><a class="link" href="TODO">Prsteni</a></li>
+				<li><a class="link" href="TODO">Ogrlice</a></li>
+				<li><a class="link" href="TODO">Po boji</a></li>
+				<li><a class="link" href="TODO">Događaji</a></li>
 			</ul>
 		</nav>
 
 		<div class="header__icons">
 			<!-- prettier-ignore -->
-			<a href="." class="icon">
+			<a href="TODO" class="icon">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
 				</svg>
 			</a>
 
 			<!-- prettier-ignore -->
-			<a href="." class="icon">
+			<a href="TODO" class="icon">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
 				</svg>
@@ -46,9 +46,9 @@
 	<div class="container">
 		<!-- prettier-ignore -->
 		<ul class="nav-links">
-			<li><a class="link" href=".">Dostava</a></li>
-			<li><a class="link" href=".">O nama</a></li>
-			<li><a class="link" href=".">Kontakt</a></li>
+			<li><a class="link" href="TODO">Dostava</a></li>
+			<li><a class="link" href="TODO">O nama</a></li>
+			<li><a class="link" href="TODO">Kontakt</a></li>
 		</ul>
 	</div>
 </footer>
@@ -69,20 +69,20 @@
 
 		// prettier-ignore
 		grid-template-columns:
-			minmax($_padding, 1fr)
+			[edge-start] minmax($_padding, 1fr)
 			[wide-start] minmax(0, 8rem)
-			[standard-start] calc($page-width - 2 * $_padding) [standard-end]
+			[standard-start] minmax(0, calc($page-width - 2 * $_padding)) [standard-end]
 			minmax(0, 8rem) [wide-end]
-			minmax($_padding, 1fr);
+			minmax($_padding, 1fr) [edge-end];
 
 		// TODO: mobile
 		/*
 		grid-template-columns:
-			$_padding
+			[edge-start] $_padding
 			[wide-start] 0
 			[standard-start] minmax(0, calc($page-width - 2 * $_padding)) [standard-end]
 			0 [wide-end]
-			$_padding;
+			$_padding [edge-end];
 		*/
 
 		> :global(*) {
@@ -91,6 +91,10 @@
 
 		> :global(.content__wide) {
 			grid-column: wide;
+		}
+
+		> :global(.content__edge) {
+			grid-column: edge;
 		}
 	}
 
@@ -120,6 +124,7 @@
 
 	footer {
 		padding: 1rem;
+		background-color: #eaeaea;
 	}
 
 	.container {
@@ -142,6 +147,7 @@
 	a {
 		display: block;
 		color: inherit;
+		line-height: 1;
 	}
 
 	a.link {
