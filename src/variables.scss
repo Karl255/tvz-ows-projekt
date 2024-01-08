@@ -11,3 +11,9 @@ $fw-bold: 600;
 		@content;
 	}
 }
+
+@mixin mobile-only($width: $page-width) {
+	@media (width < $width) {
+		@content;
+	}
+}

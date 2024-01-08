@@ -76,7 +76,7 @@
 	a:hover {
 		.product__preview {
 			// opacity: 0.9;
-			box-shadow: 0 0 5px $clr-faint;
+			box-shadow: 0 0 5px -1px black;
 		}
 
 		.product__name {

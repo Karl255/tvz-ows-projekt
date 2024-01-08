@@ -1,17 +1,26 @@
 <script>
 	import "../app.scss";
+
+	let showNav = false;
 </script>
 
 <header>
 	<div class="container header__content">
-		<a href="/">
-			<!-- prettier-ignore -->
+		<!-- prettier-ignore -->
+		<a href="/" class="logo">
 			<img src="/logo.png" alt="logo">
 		</a>
 
 		<nav>
 			<!-- prettier-ignore -->
-			<ul class="nav">
+			<button class="nav-toggle" on:click={() => showNav = !showNav}>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+				  </svg>
+			</button>
+
+			<!-- prettier-ignore -->
+			<ul class="nav" style={showNav ? "display: flex" : ""} aria-hidden={!showNav}>
 				<li><a class="link" href="TODO">Naušnice</a></li>
 				<li><a class="link" href="TODO">Prsteni</a></li>
 				<li><a class="link" href="TODO">Ogrlice</a></li>
@@ -61,7 +70,7 @@
 
 	main {
 		flex-grow: 1;
-		padding-block: 2rem;
+		padding-block: 1rem;
 
 		display: grid;
 		align-content: start;
@@ -103,27 +112,62 @@
 	.header__content {
 		display: grid;
 		grid-template-columns: 6rem 1fr 6rem;
+		grid-template-areas: "nav logo icons";
 		align-items: center;
 		gap: 4rem;
-	}
 
-	.header__icons {
-		display: flex;
-		flex-direction: row;
-		justify-content: end;
-		gap: 1.25rem;
-
-		a {
-			flex-basis: 1.25rem;
-			aspect-ratio: 1;
+		@include desktop-only {
+			grid-template-areas: "logo nav icons";
 		}
 	}
 
+	.logo {
+		grid-area: logo;
+
+		width: 6rem;
+		justify-self: center;
+	}
+
+	.header__icons {
+		grid-area: icons;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+		gap: 1.5rem;
+	}
+
+	header nav {
+		position: relative;
+	}
+
 	.nav {
+		grid-area: nav;
+
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
 		gap: 1rem 2rem;
+
+		&-toggle {
+			@include desktop-only {
+				display: none;
+			}
+		}
+
+		@include mobile-only {
+			display: none;
+
+			position: absolute;
+			top: 100%;
+			left: 0;
+
+			background-color: white;
+			flex-flow: column;
+			gap: 2rem;
+			padding: 1rem;
+			box-shadow: 0 1px 5px -1px black;
+		}
 	}
 
 	footer {
@@ -177,6 +221,15 @@
 
 		&:hover {
 			color: $clr-faint;
+		}
+	}
+
+	.icon {
+		width: 1.5rem;
+		aspect-ratio: 1;
+
+		@include desktop-only {
+			width: 1.25rem;
 		}
 	}
 
