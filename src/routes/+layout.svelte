@@ -122,7 +122,7 @@
 
 	footer {
 		padding: 1rem;
-		background-color: #eaeaea;
+		background-color: $clr-light-gray;
 	}
 
 	.container {
@@ -162,7 +162,7 @@
 		transition: color 100ms ease-out;
 
 		&:hover {
-			color: #555;
+			color: $clr-faint;
 		}
 	}
 

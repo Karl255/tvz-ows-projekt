@@ -1,4 +1,6 @@
 $page-width: 960px; // TODO: fine-tune
+$clr-light-gray: #eaeaea;
+$clr-faint: #555;
 
 @mixin desktop-only($width: $page-width) {
 	@media (width >= $width) {
