@@ -57,7 +57,7 @@
 		<ul class="footer-nav">
 			<li><a class="link" href="TODO">Informacije</a></li>
 			<li><a class="link" href="TODO">O nama</a></li>
-			<li><a class="link" href="TODO">Kontakt</a></li>
+			<li><a class="link" href="/kontakt">Kontakt</a></li>
 		</ul>
 	</div>
 </footer>
@@ -115,10 +115,9 @@
 
 	.header__content {
 		display: grid;
-		grid-template-columns: 6rem 1fr 6rem;
+		grid-template-columns: minmax(0, 6rem) minmax(4rem, 1fr) minmax(0, 6rem);
 		grid-template-areas: "nav logo icons";
 		align-items: center;
-		gap: 4rem;
 
 		@include desktop-only {
 			grid-template-areas: "logo nav icons";
@@ -128,7 +127,7 @@
 	.logo {
 		grid-area: logo;
 
-		width: 6rem;
+		max-width: 6rem;
 		justify-self: center;
 	}
 
