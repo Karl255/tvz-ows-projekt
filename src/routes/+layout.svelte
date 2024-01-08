@@ -14,16 +14,16 @@
 		<nav>
 			<!-- prettier-ignore -->
 			<button class="nav-toggle" on:click={() => showNav = !showNav}>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="icon">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 				  </svg>
 			</button>
 
 			<!-- prettier-ignore -->
 			<ul class="nav" style={showNav ? "display: flex" : ""} aria-hidden={!showNav}>
-				<li><a class="link" href="TODO">Naušnice</a></li>
-				<li><a class="link" href="TODO">Prsteni</a></li>
-				<li><a class="link" href="TODO">Ogrlice</a></li>
+				<li><a class="link" href="/artikli/naušnice">Naušnice</a></li>
+				<li><a class="link" href="/artikli/prsteni">Prsteni</a></li>
+				<li><a class="link" href="/artikli/ogrlice">Ogrlice</a></li>
 				<li><a class="link" href="TODO">Po boji</a></li>
 				<li><a class="link" href="TODO">Događaji</a></li>
 			</ul>
