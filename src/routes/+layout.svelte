@@ -67,23 +67,21 @@
 		align-content: start;
 		$_padding: 1rem;
 
-		// prettier-ignore
-		grid-template-columns:
-			[edge-start] minmax($_padding, 1fr)
-			[wide-start] minmax(0, 8rem)
-			[standard-start] minmax(0, calc($page-width - 2 * $_padding)) [standard-end]
-			minmax(0, 8rem) [wide-end]
-			minmax($_padding, 1fr) [edge-end];
-
-		// TODO: mobile
-		/*
 		grid-template-columns:
 			[edge-start] $_padding
 			[wide-start] 0
 			[standard-start] minmax(0, calc($page-width - 2 * $_padding)) [standard-end]
 			0 [wide-end]
 			$_padding [edge-end];
-		*/
+
+		@include desktop-only {
+			grid-template-columns:
+				[edge-start] minmax($_padding, 1fr)
+				[wide-start] minmax(0, 8rem)
+				[standard-start] minmax(0, calc($page-width - 2 * $_padding)) [standard-end]
+				minmax(0, 8rem) [wide-end]
+				minmax($_padding, 1fr) [edge-end];
+		}
 
 		> :global(*) {
 			grid-column: standard;

@@ -10,7 +10,7 @@
 </div>
 
 <section class="featured content__wide">
-	<h2>Istaknuti proizvodi</h2>
+	<h2 class="featured__title">Istaknuti proizvodi</h2>
 	<p>TODO: product grid/list here</p>
 </section>
 
@@ -19,7 +19,16 @@
 		margin-block: 1rem;
 
 		img {
+			// image is 1920x720
 			width: 100%;
+			aspect-ratio: 8/3;
+			min-height: 360px;
+			object-fit: cover;
+
+			@include desktop-only {
+				max-height: 720px;
+				object-fit: contain;
+			}
 		}
 	}
 
@@ -36,5 +45,9 @@
 
 	.featured {
 		margin-block: 1rem;
+
+		&__title {
+			text-align: center;
+		}
 	}
 </style>

@@ -1,1 +1,7 @@
-$page-width: 50rem; // TODO: fine-tune
+$page-width: 960px; // TODO: fine-tune
+
+@mixin desktop-only($width: $page-width) {
+	@media (width >= $width) {
+		@content;
+	}
+}
