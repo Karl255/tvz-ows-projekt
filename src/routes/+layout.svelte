@@ -74,26 +74,30 @@
 
 		display: grid;
 		align-content: start;
-		$_padding: 1rem;
+		--_padding: 1rem;
 
 		grid-template-columns:
-			[edge-start] $_padding
+			[edge-start] var(--_padding)
 			[wide-start] 0
-			[standard-start] minmax(0, calc($page-width - 2 * $_padding)) [standard-end]
+			[normal-start] minmax(0, calc($page-width - 2 * var(--_padding))) [normal-end]
 			0 [wide-end]
-			$_padding [edge-end];
+			var(--_padding) [edge-end];
+
+		@include desktop-only($page-width-xs) {
+			--_padding: 2rem;
+		}
 
 		@include desktop-only {
 			grid-template-columns:
-				[edge-start] minmax($_padding, 1fr)
+				[edge-start] minmax(var(--_padding), 1fr)
 				[wide-start] minmax(0, 8rem)
-				[standard-start] minmax(0, calc($page-width - 2 * $_padding)) [standard-end]
+				[normal-start] calc($page-width - 2 * var(--_padding)) [normal-end]
 				minmax(0, 8rem) [wide-end]
-				minmax($_padding, 1fr) [edge-end];
+				minmax(var(--_padding), 1fr) [edge-end];
 		}
 
 		> :global(*) {
-			grid-column: standard;
+			grid-column: normal;
 		}
 
 		> :global(.content__wide) {

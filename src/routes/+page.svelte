@@ -22,7 +22,7 @@
 	</div>
 
 	<!-- prettier-ignore -->
-	<a href="/artikli" class="btn">Pregledaj sve</a>
+	<a href="/artikli" class="btn show-all">Pregledaj sve</a>
 </section>
 
 <style lang="scss">
@@ -60,6 +60,7 @@
 		&__title {
 			text-align: center;
 			font-weight: $fw-bold;
+			font-size: $fz-title;
 		}
 
 		> * + * {
@@ -67,20 +68,9 @@
 		}
 	}
 
-	a.btn {
-		color: white;
-		background-color: black;
-		text-decoration: none;
-
+	.show-all {
 		display: block;
 		width: max-content;
 		margin-inline: auto;
-		padding: 0.5rem 1rem;
-
-		transition: opacity 100ms ease-out;
-
-		&:hover {
-			opacity: 0.8;
-		}
 	}
 </style>

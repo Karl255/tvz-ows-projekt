@@ -1,7 +1,8 @@
 :root {
 	font-family: "Montserrat";
+	line-height: 1.6;
+	font-size: $fw-normal;
 	font-weight: $fw-normal;
-	line-height: 1.5;
 }
 
 img {
@@ -11,11 +12,11 @@ img {
 
 p,
 h1,
-h3,
+h2,
 h3 {
 	margin: 0;
 	font-size: inherit;
-	font-weight: $fw-normal;
+	font-weight: inherit;
 }
 
 button {
@@ -40,4 +41,20 @@ button {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border-width: 0;
+}
+
+// element
+
+.btn {
+	color: white;
+	background-color: black;
+	text-decoration: none;
+
+	padding: 0.5rem 1rem;
+
+	transition: opacity 100ms ease-out;
+
+	&:hover {
+		opacity: 0.8;
+	}
 }
