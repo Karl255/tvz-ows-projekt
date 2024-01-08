@@ -10,6 +10,7 @@
 <style lang="scss">
 	h1 {
 		font-size: 1.5rem;
+		font-weight: $fw-bold;
 		text-align: center;
 		margin-bottom: 2rem;
 	}

@@ -11,7 +11,7 @@
 
 		<nav>
 			<!-- prettier-ignore -->
-			<ul class="nav-links">
+			<ul class="nav">
 				<li><a class="link" href="TODO">Naušnice</a></li>
 				<li><a class="link" href="TODO">Prsteni</a></li>
 				<li><a class="link" href="TODO">Ogrlice</a></li>
@@ -23,14 +23,14 @@
 		<div class="header__icons">
 			<!-- prettier-ignore -->
 			<a href="TODO" class="icon">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
 				</svg>
 			</a>
 
 			<!-- prettier-ignore -->
 			<a href="TODO" class="icon">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
 				</svg>
 			</a>
@@ -45,8 +45,8 @@
 <footer>
 	<div class="container">
 		<!-- prettier-ignore -->
-		<ul class="nav-links">
-			<li><a class="link" href="TODO">Dostava</a></li>
+		<ul class="footer-nav">
+			<li><a class="link" href="TODO">Informacije</a></li>
 			<li><a class="link" href="TODO">O nama</a></li>
 			<li><a class="link" href="TODO">Kontakt</a></li>
 		</ul>
@@ -61,7 +61,7 @@
 
 	main {
 		flex-grow: 1;
-		padding-block: 1rem;
+		padding-block: 2rem;
 
 		display: grid;
 		align-content: start;
@@ -98,7 +98,6 @@
 
 	header {
 		padding: 1.5rem;
-		font-weight: 300;
 	}
 
 	.header__content {
@@ -120,9 +119,23 @@
 		}
 	}
 
+	.nav {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		gap: 1rem 2rem;
+	}
+
 	footer {
 		padding: 1rem;
 		background-color: $clr-light-gray;
+	}
+
+	.footer-nav {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		gap: 1.25rem;
 	}
 
 	.container {
@@ -136,10 +149,11 @@
 		}
 	}
 
-	.nav-links {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
+	ul {
+		display: contents;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 
 	a {
@@ -168,12 +182,5 @@
 
 	svg {
 		display: block;
-	}
-
-	ul {
-		display: contents;
-		margin: 0;
-		padding: 0;
-		list-style: none;
 	}
 </style>

@@ -27,7 +27,7 @@
 
 <style lang="scss">
 	.hero {
-		margin-block: 2rem;
+		margin-block: 1rem;
 
 		img {
 			// image is 1920x720
@@ -59,6 +59,7 @@
 
 		&__title {
 			text-align: center;
+			font-weight: $fw-bold;
 		}
 
 		> * + * {

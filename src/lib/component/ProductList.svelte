@@ -65,6 +65,7 @@
 			text-decoration-line: underline;
 			text-decoration-color: transparent;
 			transition: text-decoration-color 100ms ease-out;
+			font-weight: $fw-bold;
 		}
 
 		&__price {
