@@ -30,8 +30,8 @@
 </div>
 
 <style lang="scss">
-	* + .group {
-		margin-top: 2rem;
+	.group {
+		margin-bottom: 2rem;
 	}
 
 	.group > * + * {
@@ -67,5 +67,9 @@
 	textarea {
 		min-height: 8rem;
 		resize: vertical;
+	}
+
+	svg {
+		display: inline;
 	}
 </style>

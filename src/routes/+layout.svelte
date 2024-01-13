@@ -1,4 +1,5 @@
 <script>
+	import FooterNav from "$lib/component/FooterNav.svelte";
 	import "../app.scss";
 
 	let showNav = false;
@@ -53,12 +54,7 @@
 
 <footer>
 	<div class="container">
-		<!-- prettier-ignore -->
-		<ul class="footer-nav">
-			<li><a class="link" href="TODO">Informacije</a></li>
-			<li><a class="link" href="TODO">O nama</a></li>
-			<li><a class="link" href="/kontakt">Kontakt</a></li>
-		</ul>
+		<FooterNav />
 	</div>
 </footer>
 
@@ -79,7 +75,7 @@
 		grid-template-columns:
 			[edge-start] var(--_padding)
 			[wide-start] 0
-			[normal-start] minmax(0, calc($page-width - 2 * var(--_padding))) [normal-end]
+			[normal-start] minmax(0, $page-width) [normal-end]
 			0 [wide-end]
 			var(--_padding) [edge-end];
 
@@ -91,7 +87,7 @@
 			grid-template-columns:
 				[edge-start] minmax(var(--_padding), 1fr)
 				[wide-start] minmax(0, 8rem)
-				[normal-start] calc($page-width - 2 * var(--_padding)) [normal-end]
+				[normal-start] minmax(0, $page-width) [normal-end]
 				minmax(0, 8rem) [wide-end]
 				minmax(var(--_padding), 1fr) [edge-end];
 		}
@@ -144,11 +140,10 @@
 
 	header nav {
 		position: relative;
+		grid-area: nav;
 	}
 
 	.nav {
-		grid-area: nav;
-
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
@@ -176,30 +171,16 @@
 	}
 
 	footer {
-		padding: 1rem;
 		background-color: $clr-light-gray;
-	}
-
-	.footer-nav {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-		gap: 1.25rem;
 	}
 
 	.container {
 		width: 100%;
 		max-width: $page-width;
 		margin-inline: auto;
-		padding-inline: 1rem;
-
-		footer & {
-			max-width: calc($page-width * 0.6);
-		}
 	}
 
 	ul {
-		display: contents;
 		margin: 0;
 		padding: 0;
 		list-style: none;
