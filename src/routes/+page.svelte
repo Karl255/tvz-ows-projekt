@@ -44,7 +44,7 @@
 	}
 
 	.quote {
-		margin-block: 3rem;
+		margin-block: 4rem;
 
 		p {
 			max-width: 60ch;
