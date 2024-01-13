@@ -32,14 +32,14 @@
 		<div class="header__icons">
 			<!-- prettier-ignore -->
 			<a href="TODO" class="icon">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
 				</svg>
 			</a>
 
 			<!-- prettier-ignore -->
 			<a href="TODO" class="icon">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
 				</svg>
 			</a>
@@ -114,12 +114,14 @@
 	}
 
 	.header__content {
+		$_side-width: 8rem;
 		display: grid;
-		grid-template-columns: minmax(0, 6rem) minmax(4rem, 1fr) minmax(0, 6rem);
+		grid-template-columns: 1fr minmax(0, 8rem) 1fr;
 		grid-template-areas: "nav logo icons";
 		align-items: center;
 
 		@include desktop-only {
+			grid-template-columns: minmax(0, $_side-width) minmax(4rem, 1fr) minmax(0, $_side-width);
 			grid-template-areas: "logo nav icons";
 		}
 	}
@@ -127,7 +129,7 @@
 	.logo {
 		grid-area: logo;
 
-		max-width: 6rem;
+		max-width: 100%;
 		justify-self: center;
 	}
 
@@ -192,7 +194,7 @@
 		padding-inline: 1rem;
 
 		footer & {
-			max-width: calc($page-width * 0.6); // TODO: var, fine tune
+			max-width: calc($page-width * 0.6);
 		}
 	}
 
@@ -230,10 +232,6 @@
 	.icon {
 		width: 1.5rem;
 		aspect-ratio: 1;
-
-		@include desktop-only {
-			width: 1.25rem;
-		}
 	}
 
 	svg {
