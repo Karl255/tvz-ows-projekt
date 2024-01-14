@@ -21,6 +21,7 @@
 		// animation: 500ms ease-out fade-in;
 	}
 
+	/*
 	@keyframes fade-in {
 		from {
 			opacity: 0;
@@ -30,4 +31,5 @@
 			opacity: 1;
 		}
 	}
+	*/
 </style>
