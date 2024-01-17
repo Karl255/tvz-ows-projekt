@@ -6,8 +6,13 @@
 <h1 class="sr-only">Wood U - color yourself</h1>
 
 <div class="hero content__edge">
-	<!-- prettier-ignore -->
-	<img src="/hero.webp" alt="hero">
+	<!-- 768px = 0.8 * $page-width -->
+	<img
+		srcset="/hero-mini.webp 960w, /hero.webp 1920w"
+		sizes="(max-width: 768px) 960px, 1920px"
+		src="/hero.webp"
+		alt="hero"
+	/>
 </div>
 
 <div class="quote">
@@ -32,7 +37,6 @@
 		img {
 			// image is 1920x720
 			width: 100%;
-			aspect-ratio: 8/3;
 			min-height: 360px;
 			object-fit: cover;
 
