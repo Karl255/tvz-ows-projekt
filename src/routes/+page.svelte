@@ -7,7 +7,7 @@
 
 <div class="hero content__edge">
 	<!-- prettier-ignore -->
-	<img src="/hero.png" alt="hero">
+	<img src="/hero.webp" alt="hero">
 </div>
 
 <div class="quote">
